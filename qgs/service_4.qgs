@@ -33,7 +33,7 @@
   <layer-tree-group>
     {%- for item in layertree recursive -%}
         {% if item['type'] == "productset" %}
-            <layer-tree-group expanded="1" checked="Qt::Checked" name="{{ item['name'] }}" wms-group-request-mode="Normal">
+            <layer-tree-group expanded="1" checked="Qt::Checked" name="{{ item['name'] }}" wms-group-request-mode="{{ 'Opaque' if item['opaque'] else 'Normal' }}">
               <shortname>{{ item['name'] }}"</shortname>
               <title wfs="">{{ item['title'] }}</title>
                 {{ loop(item['items']) }}

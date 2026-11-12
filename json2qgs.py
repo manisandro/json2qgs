@@ -238,6 +238,7 @@ class Json2Qgs():
 
             layer_info = {
                 "type": layer["type"],
+                "opaque": layer.get("opaque", False),
                 "name": layer["name"],
                 "title": layer["title"],
                 "items": sublayers
